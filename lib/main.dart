@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:lost_found_app/home_page.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:lost_found_app/views/login_screen.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -17,19 +18,15 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+    return ProviderScope(
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          useMaterial3: true,
+        ),
+        home: const LoginScreen(),
       ),
-      initialRoute: '/',
-      routes: {
-        '/': (context) => const HomePage(),
-      },
     );
   }
 }
-
-
-

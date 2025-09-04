@@ -13,7 +13,7 @@ void mySnackBar({
       SnackBar(
         content: Text(message),
         backgroundColor: backgroundColor,
-        duration: const Duration(seconds: 1),
+        duration: const  Duration(seconds: 2),
       ),
     );
   } else {
